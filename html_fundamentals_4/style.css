@@ -1,0 +1,36 @@
+#aboutMePara {
+    font-size: 12px;
+
+}
+
+#abMe {
+    color: firebrick;
+}
+
+.content {
+    text-align: center;
+}
+
+#selfie {
+    width: 400px;
+    height: 400px;
+    float: left;
+
+}
+
+.heading {
+    font-family: 'Montserrat', sans-serif;
+}
+
+.Experience {
+    background-color: aquamarine;
+}
+
+.realSkills {
+    color: midnightblue;
+}
+
+.nav {
+    list-style-type: none;
+    display: inline;
+}
