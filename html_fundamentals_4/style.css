@@ -3,11 +3,11 @@
 
 }
 
-#abMe {
+#aboutMeHeading {
     color: firebrick;
 }
 
-.content {
+.centerContent {
     text-align: center;
 }
 
@@ -22,15 +22,19 @@
     font-family: 'Montserrat', sans-serif;
 }
 
-.Experience {
+
+.realSkills {
+    color:crimson;
+}
+
+#experience-list {
     background-color: aquamarine;
 }
 
-.realSkills {
-    color: midnightblue;
-}
 
-.nav {
-    list-style-type: none;
+
+.nav li {
     display: inline;
+    margin-right: 10px;
+    font-size: 22px;
 }
