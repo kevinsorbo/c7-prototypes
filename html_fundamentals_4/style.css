@@ -1,6 +1,7 @@
-#aboutMePara {
+.aboutMePara {
     font-size: 12px;
-    display: inline-block;
+    clear: left;
+
 
 
 }
