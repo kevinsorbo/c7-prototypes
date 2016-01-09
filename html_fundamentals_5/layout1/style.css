@@ -1,0 +1,26 @@
+#header {
+    background-color: yellow;
+    text-align: center;
+    border-style: solid;
+    height: 15vh;
+}
+
+#header ul li{
+    list-style-type: none;
+    display: inline-block;
+}
+
+#main-content{
+    text-align: center;
+    border-style: solid;
+    height: 70vh;
+}
+#footer {
+    background-color: yellow;
+    height: 15vh;
+    border-style: solid;
+}
+#footer ul li{
+    list-style-type: none;
+    text-align: center;
+}
