@@ -1,0 +1,23 @@
+.nav li {
+    list-style-type: none;
+    display: inline-block;
+    margin-right: 5px;
+}
+
+.nav {
+    text-align: center;
+}
+
+#header {
+    height: 15vh;
+    background-color: yellow;
+}
+
+#main-content {
+    height: auto;
+    text-align: center;
+}
+
+#header, #main-content {
+    border:1px solid;
+}
