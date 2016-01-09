@@ -1,0 +1,26 @@
+#Title {
+    background-color: yellow;
+    height: 15vh;
+}
+
+#main-content {
+    margin-left: 15vw;
+    height: 85vh;
+
+}
+
+#Title, #main-content, #left-nav {
+    border: 1px solid;
+    text-align: center;
+}
+
+#left-nav {
+    background-color: yellow;
+    width: 15vw;
+    height: 85vh;
+    float: left;
+    position: absolute;
+
+
+}
+
