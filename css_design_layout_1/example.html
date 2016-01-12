@@ -6,7 +6,7 @@
         <meta charset="utf-8">
 
         <style>
-
+/* Float:left the first 3 divs to get them on the same line */
             .left,.middle,.right {
                 float:left;
                 width:25%;
@@ -15,9 +15,9 @@
             .middle, .right{
                 margin-left: 5%;
             }
-
+/* Float:left 2nd set of 3 divs to get them on the same line */
             .left2, .mid2, .right2 {
-                float:left;
+                float: left;
                 width:25vw;
                 border: 1px solid;
             }
@@ -33,16 +33,17 @@
             .right2{
                 padding:10px 5px 15px 20px;
             }
-
+/*Had to clear left since 2nd set of divs had height 0 meaning it was like a ghost */
             .feature_set_1_3{
                 height:100px;
+                clear: left;
             }
 
-            .left3, .mid3, .right3 {
-                float:left;
-
+            .left3, .mid3, .right3{
+                float: left;
+                width: 100px;
             }
-/*
+
             .left3{
                 height:25%;
             }
@@ -54,7 +55,7 @@
             .right3 {
                 height: 50cm;
             }
-            */
+
         </style>
 
     </head>
