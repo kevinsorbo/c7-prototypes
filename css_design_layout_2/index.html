@@ -5,7 +5,7 @@
     <meta charset="utf-8">
 
     <style>
-
+/*header set to 20% viewport and full width */
         header {
             width:100%;
             height: 20vh;
@@ -25,12 +25,12 @@
             color: purple;
             text-shadow: 2px 2px black;
         }
-
+/* float my navbar to the right */
         ul {
             float: right;
             list-style-type: none;
         }
-
+/* make horizontal list and move it up into header using bottom:7vh */
         li {
 
             display: inline-block;
@@ -43,16 +43,16 @@
         a {
             color:darkgoldenrod;
         }
-
+/* All sections height 30% and width 100% */
         section {
             width:100%;
             height:30vh;
         }
+
         #fs-2 div {
             border:1px solid;
-
-
         }
+/* float one div1 to left and div2 to right to make them on the same line */
         .div1 {
             width:25%;
             float: left;
@@ -63,7 +63,7 @@
             float: right;
 
         }
-
+/* I made a clear here so that the next section can be under previous section */
         #fs-3 {
             clear: both;
         }
@@ -82,6 +82,16 @@
             width: 75%;
         }
 
+        footer {
+            width: 100%;
+            height:20vh;
+            background-color:aquamarine;
+        }
+/* using margin auto to create gutters */
+        .container{
+            width:70vw;
+            margin: auto;
+        }
     </style>
 
 </head>
@@ -113,6 +123,8 @@
             <div class="div3">Kobe Bryant </div>
             <div class="div4">Magic Johnson</div>
         </section>
+
+        <footer>16 Championships</footer>
 
     </div>
 </body>
