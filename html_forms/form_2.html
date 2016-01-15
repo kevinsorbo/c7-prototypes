@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Form2</title>
+    <meta charset="utf-8">
+    <style>
+
+        body {
+            background-color: firebrick;
+        }
+
+        div {
+            width: 70%;
+            margin: auto;
+            color: whitesmoke;
+            font-family: Arial,sans-serif;
+        }
+        h3:first-child {
+            text-align: center;
+        }
+
+        ol{
+            width: 85%;
+        }
+        .textform {
+            width: 530px;
+            height: 50px;
+        }
+
+        .textform_SS {
+            width: 260px;
+            height: 50px;
+        }
+        div p {
+            width: 90%;
+        }
+
+        input {
+            margin-right: 8px;
+            box-shadow: 2px 2px 2px 0 maroon;
+        }
+        ::-webkit-input-placeholder {
+            padding-left: 20px;
+            font-size: 13px;
+        }
+        button{
+            background-color: maroon;
+            color: white;
+            border: none;
+            float: right;
+            width: 150px;
+            height: 50px;
+            box-shadow: 2px 2px 2px 0 darkred;
+            position: relative;
+            right:185px;
+        }
+    </style>
+</head>
+
+<body>
+    <div>
+        <h3>Instructions for Application - Academic Year 2014</h3>
+        <ol>
+            <li>The deadline for 2014-2015 scholarship application: March 30, 2014. Applications received after March30 will be considered on a                  funds available basis.</li>
+            <li>Only completed applications will be considered. Do Not Leave Items Blank.</li>
+            <li>Attach a current copy of your high school and/or college transcripts.</li>
+            <li>Two signed letters of recommendation (from non-relatives) must be attached to this application.</li>
+
+        </ol>
+        <p>Consideration for any scholarship award is based on a point system including GPA, participation in extra curricular activities, school           organizations and community service. This will be a four semester scholarship, and you must maintain criteria set in the guidelines.</p>
+        <h3>Applicant Data</h3>
+        <br>
+        <form>
+            <input class="textform" type="text" name="Full_Name" placeholder="Last Name, First Name, MI">
+            <input class="textform_SS" type="text" name="Social_Security" placeholder="Social Security #">
+            <br>
+            <br>
+            <input class="textform" type="text" name="Residence" placeholder="City,State,Zip,Country">
+            <input class="textform" type="text" name="Home_Phone" placeholder="Permanent Home Phone">
+            <br>
+            <br>
+            <input class="textform" type="text" name="Major" placeholder="Intended Major at University">
+            <input class="textform" type="text" name="Location" placeholder="At which location will you be attending?">
+            <br>
+            <br>
+            <button type="button">NEXT >></button>
+
+        </form>
+    </div>
+
+</body>
+</html>
