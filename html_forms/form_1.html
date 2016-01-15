@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+ <html>
+<head>
+    <title>Forms</title>
+    <meta charset="utf-8">
+</head>
+
+<style>
+    .textform {
+        background-color: maroon;
+        font-family: Algerian;
+        border-color: #6a6969;
+        box-shadow: 5px 5px 5px black;
+    }
+</style>
+<body>
+    <form action="http://learningfuze.com/echo.php" method="get" >
+        <input class="textform" type="text" name="my_name" placeholder="Korey Lo"> <br>
+        <input class="textform" type="text" name="email" placeholder="koreylo9@gmail.com"> <br>
+        <br>
+        <br>
+        <textarea></textarea>
+        <br>
+        <br>
+        <label for="pho">pho</label>
+        <input type="radio" name="favorite_food" value="pho" id="pho" ><br>
+        <label for="burgers">burgers</label>
+        <input type="radio"name="favorite_food" value="burgers" id="burgers"><br>
+        <label for="sushi">sushi</label>
+        <input type="radio" name="favorite_food" value="sushi" checked="checked" id="sushi">
+        <br>
+        <br>
+        <input type="checkbox" name="favorite_game" value="CallofDuty">Call of Duty<br>
+        <input type="checkbox" name="favorite_game" value="LeagueOfLegends">League of Legends<br>
+        <input type="checkbox" name="favorite_game" value="Spades">Spades<br>
+        <input type="checkbox" name="favorite_game" value="None" disabled="disabled">I don't play games
+        <br>
+        <br>
+        <select name="movies" multiple>
+            <option value="Rush_Hour2">Rush Hour 2</option>
+            <option value="Inside_Man">Inside Man</option>
+            <option value="Dumb_and_Dumber">Dumb and Dumber</option>
+            <option value="Coach Carter">Coach Carter</option>
+        </select>
+        <br>
+        <br>
+        <button type="button">Submit Form</button>
+    </form>
+</body>
+</html>
