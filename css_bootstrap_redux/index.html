@@ -14,16 +14,17 @@
             width: 20%;
             margin: auto;
         }
-
+        /* Did this styling to make modal width and height equal to image full width and height*/
         .modal-dialog{
             display: inline-block;
             width: auto;
             height: auto;
         }
-
+        /* Align center caption below modal image*/
         .modal-footer {
             text-align: center;
         }
+        /*make modal dismiss button float right*/
         button{
             float: right;
         }
@@ -31,7 +32,7 @@
 
 </head>
 <body>
-
+<!-- navbar -->
     <nav class="navbar navbar-default">
         <div class="container-fluid">
             <div class="navbar-header">
@@ -56,7 +57,9 @@
             </ul>
         </div>
     </nav>
+<!--end of navbar-->
 
+<!--Carosel -->
     <div id="SportsCarousel" class="carousel slide" data-ride="carousel">
         <ol class="carousel-indicators">
             <li data-target="#SportsCarousel" data-slide-to="0" class="active"></li>
@@ -65,7 +68,7 @@
             <li data-target="#SportsCarousel" data-slide-to="3"></li>
             <li data-target="#SportsCarousel" data-slide-to="4"></li>
         </ol>
-
+<!-- used <a> tag as link to image in carousel to open up modal.  Gave each image its own id to target in a tag. -->
         <div class="carousel-inner" role="listbox">
             <div class="item active">
                 <a data-toggle="modal" data-target="#49ers"><img src="images/49ers.jpg" alt="49ers" width="460" height="345"></a>
@@ -82,7 +85,6 @@
             <div class="item">
                 <a data-toggle="modal" data-target="#giants"><img src="images/giants.jpg" alt="giants" width="460" height="345"></a>
             </div>
-
         </div>
 
         <a class="left carousel-control" href="#SportsCarousel" role="button" data-slide="prev">
@@ -94,7 +96,10 @@
             <span class="sr-only">Next</span>
         </a>
     </div>
+<!--end of Carousel-->
 
+<!-- Modal -->
+<!-- Made multiple modal because of various images being displayed.  Gave each a unique id -->
     <div class="modal fade" id="49ers" role="dialog">
         <div class="modal-dialog">
             <div class="modal-content">
@@ -149,7 +154,7 @@
             </div>
         </div>
     </div>
-
+<!-- end of Modal -->
 </body>
 </html>
 
