@@ -39,6 +39,35 @@
         console.log("output2 is ",output2);
         console.log("output3 is ",output3);
         console.log("output4 is ",output4);
+        /* Feature Set 3 */
+        var gameNumber = 64;
+        var userInput1 = 24;
+        var userInput2 = gameNumber;
+        /* Feature Set 4 */
+        if(userInput1 > gameNumber)
+        {
+            console.log("Number is too high");
+        }
+        else {
+            console.log("Number is too low");
+        }
+
+        if(userInput1 < 1 || userInput1 > 100)
+        {
+            console.log("Number is out of range");
+        }
+        else
+        {
+            console.log("Number is in range");
+        }
+
+        if(userInput2 == gameNumber)
+        {
+            console.log("The correct number has been guessed!");
+        }
+        else {
+            console.log("Try again!");
+        }
     </script>
 </head>
 <body>
