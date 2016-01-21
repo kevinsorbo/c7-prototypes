@@ -8,27 +8,32 @@
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
-
+<!-- Feature Set 3: add onclick to div with class back -->
 <div id="game-area">
     <div class="card">
         <div class="front"><img src="imgs/british_flag.jpg" alt=""></div>
-        <div class="back"><img src="imgs/card_design.png" alt="Card Back"></div>
+        <div class="back" onclick="cardFlip(this)"><img src="imgs/card_design.png" alt="Card Back"></div>
     </div>
     <div class="card">
         <div class="front"><img src="imgs/path.jpg" alt=""></div>
-        <div class="back"><img src="imgs/card_design.png" alt="Card Back"></div>
+        <div class="back" onclick="cardFlip(this)"><img src="imgs/card_design.png" alt="Card Back"></div>
     </div>
     <div class="card">
         <div class="front"><img src="imgs/british_flag.jpg" alt=""></div>
-        <div class="back"><img src="imgs/card_design.png" alt="Card Back"></div>
+        <div class="back" onclick="cardFlip(this)"><img src="imgs/card_design.png" alt="Card Back"></div>
     </div>
     <div class="card">
         <div class="front"><img src="imgs/path.jpg" alt=""></div>
-        <div class="back"><img src="imgs/card_design.png" alt="Card Back"></div>
+        <div class="back" onclick="cardFlip(this)"><img src="imgs/card_design.png" alt="Card Back"></div>
     </div>
+    <!-- Feature Set 1 -->
     <br>
     <button type="button" onclick="myMessage()">First Function</button><br>
     <button type="button" onclick="add(5,8)">ADD</button>
+
+    <!-- Feature Set 2 -->
+    <br>
+    <button type="button" onclick="console.log(add2result)">ADD #2</button>
 </div>
 
 </body>
