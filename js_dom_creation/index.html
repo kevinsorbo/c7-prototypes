@@ -36,16 +36,35 @@
             font-style: italic;
             font-size: 120%;
         }
+
     </style>
 
     <script>
+
+
         $(document).ready(function () {
             //playground 1 code
+            $("#playground1").append("<h1>I am a heading</h1>");
+            $("#playground1").append("<p>This is an awesome paragraph</p>");
+            $("#playground1").append("<p style='color:red'>This has red text</p>");
 
             //playground 2 code
+             var p2_div = $("<div>").text("Here is some awesome div text").addClass('awesome_class');
+            $("#playground2").append(p2_div);
+
+            var p2_div2 = $("<div>").text("Here is MORE awesome div text").addClass('awesome_class').attr("id","my_awesome_div2");
+            $("#playground2").append(p2_div2);
+
+            var p2_div3 = $("<div>Here is <strong>EVEN MORE</strong> awesome div text</div>").addClass('awesome_class').attr("id","my_awesome_div3").attr("data-coolness","high");
+            $("#playground2").append(p2_div3);
 
             //playground 3 code
+            var p3_ul = $("<ul>").addClass('neato');
+            $("#playground3").append(p3_ul);
+            $(".neato").append()
         });
+
+
     </script>
 </head>
 <body>
