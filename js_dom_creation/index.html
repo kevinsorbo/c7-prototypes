@@ -44,11 +44,13 @@
 
         $(document).ready(function () {
             //playground 1 code
+            //Takes whatever is in .append and puts it as last child in element with playground1 as class
             $("#playground1").append("<h1>I am a heading</h1>");
             $("#playground1").append("<p>This is an awesome paragraph</p>");
             $("#playground1").append("<p style='color:red'>This has red text</p>");
 
             //playground 2 code
+            // note: Can also just .append this div and text without .text and .addClass
              var p2_div = $("<div>").text("Here is some awesome div text").addClass('awesome_class');
             $("#playground2").append(p2_div);
 
@@ -64,6 +66,7 @@
             $("#playground3>.neato").append("<li>Link 1</li>").append("<li>Link 2</li>").append("<li>Link 3</li>");
             var p3_figure = $("<figure>").addClass("awesome_picture");
             $("#playground3").append(p3_figure);
+            // Could've also used append here but wanted to see what .html did
             $("#playground3>.awesome_picture").html('<img src="http://comerecommended.com/wp-content/uploads/2013/01/how-to-get-awesome-back.jpg">');
             $("#playground3>.awesome_picture").append('<figcaption>That\'s right, <span class="bold_text">you are</span></figcaption>');
 
