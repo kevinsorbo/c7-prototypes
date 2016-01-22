@@ -11,14 +11,13 @@
     <style>
         .carousel-inner > .item > img,
         .carousel-inner > .item > a > img {
-            width: 20%;
             margin: auto;
         }
         /* Did this styling to make modal width and height equal to image full width and height*/
-        .modal-dialog{
-            display: inline-block;
-            width: auto;
-            height: auto;
+        
+        .modal-dialog img{
+            width:100%;
+            height:auto;
         }
         /* Align center caption below modal image*/
         .modal-footer {
@@ -71,7 +70,7 @@
 <!-- used <a> tag as link to image in carousel to open up modal.  Gave each image its own id to target in a tag. -->
         <div class="carousel-inner" role="listbox">
             <div class="item active">
-                <a data-toggle="modal" data-target="#49ers"><img src="images/49ers.jpg" alt="49ers" width="460" height="345"></a>
+                <a data-toggle="modal" data-target="#49ers"><img src="images/49ers.jpg" alt="49ers" width="460" height="auto"></a>
             </div>
             <div class="item">
                 <a data-toggle="modal" data-target="#lakers"><img src="images/lakers.png" alt="lakers" width="460" height="345"> </a>
