@@ -8,15 +8,15 @@
 
     <script>
         /* Feature Set 1.0 Student Array */
-        var student_array =["Korey", "Alex", "Chang","Gabe","Chris"];
-        console.log("Student 2:",student_array[2]);
-        /* Feature Set 1.1 Array Methods */
-        console.log("Student Array:",student_array);
-        console.log("Student Array Length:",student_array.length);
-        student_array.push("Maichee");
-        student_array.push("Nolan");
-        console.log("Array after .push:",student_array);
-        /* Feature Set 2.0 Build Object*/
+//        var student_array =["Korey", "Alex", "Chang","Gabe","Chris"];
+//        console.log("Student 2:",student_array[2]);
+//        /* Feature Set 1.1 Array Methods */
+//        console.log("Student Array:",student_array);
+//        console.log("Student Array Length:",student_array.length);
+//        student_array.push("Maichee");
+//        student_array.push("Nolan");
+//        console.log("Array after .push:",student_array);
+//        /* Feature Set 2.0 Build Object*/
         var student = {};
         student.firstName = "Galen";
         student.lastName = "Lo";
@@ -31,35 +31,49 @@
         student.aboutMe = function(){
             return "My full name is " + this.firstName + " " + this.lastName + ", and I am " + this.age + " years old.";
         }
+
+
+
+
+
+        var questionObj = {};
         student.askQuestion = function(question){
-            this.questionList.push(question);
-            hasQuestion = false;
-            return "A question has been added to your list.";
+            questionObj.questionAsked = question;
+            return question;
         }
-        student.answerQuestion = function(){
-            if(this.hasQuestion){
-                this.hasQuestion = false;
-                return questionList.length - 1;
+
+
+        student.answerQuestion = function(answer){
+            questionObj.answer = answer;
+            student.questionList.push(questionObj);
+            if(questionObj) {
+                questionObj = {};
             }
-            else{
-                return "You have no pending questions.";
-            }
+            return answer;
         }
-        /*Feature Set 2.2 */
-        console.log("Greeting:",student.greeting());
-        console.log("About Me:",student.aboutMe());
-        console.log("Answer Question:",student.answerQuestion());
-        console.log("Question 1:",student.askQuestion("What time is lunch?"));
-        console.log("Question list after 1st question:",student.questionList);
-        console.log("Question 2:",student.askQuestion("When does school end?"));
-        console.log("Question list after 2nd question:",student.questionList);
-        console.log("Question 3:",student.askQuestion("Can we drink beer?"));
-        console.log("Question list after 3rd question:",student.questionList);
-        console.log("Answer Question:",student.answerQuestion());
-        /* console exercise
-        console.log("Here is my student object " + student);
-        console.log("Here is my student object ",student);
-        */
+        console.log("Question:",student.askQuestion("What time is it?"));
+        console.log("Answer:",student.answerQuestion("It is 3"));
+        console.log("Question:",student.askQuestion("When is lunch?"));
+        console.log("Question:",student.answerQuestion("Lunch is at 12"));
+        console.log(student.questionList);
+
+
+
+//        /*Feature Set 2.2 */
+//        console.log("Greeting:",student.greeting());
+//        console.log("About Me:",student.aboutMe());
+//        console.log("Answer Question:",student.answerQuestion());
+//        console.log("Question 1:",student.askQuestion("What time is lunch?"));
+//        console.log("Question list after 1st question:",student.questionList);
+//        console.log("Question 2:",student.askQuestion("When does school end?"));
+//        console.log("Question list after 2nd question:",student.questionList);
+//        console.log("Question 3:",student.askQuestion("Can we drink beer?"));
+//        console.log("Question list after 3rd question:",student.questionList);
+//        console.log("Answer Question:",student.answerQuestion());
+//        /* console exercise
+//        console.log("Here is my student object " + student);
+//        console.log("Here is my student object ",student);
+//        */
 
 
     </script>
