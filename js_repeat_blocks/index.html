@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>JS_Loops</title>
+    <meta charset="utf-8">
+
+    <script>
+
+        /*Feature Set 1*/
+        var numbers = [1,2,3,4,5,6,7,8,9,10];
+        var mixedArray = [4,56,11,13,97,22,7,36,19,5,8,10];
+        for(var i = 0; i < numbers.length; i++){
+            console.log(numbers[i]);
+        }
+
+        for(var i = numbers.length; i >= 0; i--){
+            console.log(numbers[i]);
+        }
+
+        for(var i = 0; i < numbers.length; i++){
+            if(numbers[i]%2 != 0 ){
+                console.log(numbers[i]);
+            }
+        }
+
+        for(var i = 0; i < mixedArray.length; i++){
+            if(mixedArray[i]%2 != 0 ){
+                console.log(mixedArray[i]);
+            }
+        }
+
+        /*Feature Set 2 */
+        var classRoom = {desk1:'Stu', desk2:'Peggy', desk3:'LoneStar', desk4:'George', desk5:'Sheldon'}
+        for(x in classRoom){
+            console.log(classRoom[x] + " is at " + x);
+        }
+
+        /*Feature Set 3*/
+        var studentArray = [{name:"Bob",grade:"87"},{name:"Fred",grade:82},{name:"George",grade:93},{name:"Robert",grade:85}];
+        function findStudent(name){
+            var i = 0;
+            while(i<studentArray.length) // This is essentially saying while true
+            {
+                if(studentArray[i].name == name){ // Checks to see if name is in object at that index
+                    return ("Found " + name + " their grade is: " + studentArray[i].grade); // returns statement and breaks loop
+                }
+                i++;
+            }
+            if(i > studentArray.length-1){ // Checks to see if we went through the entire array
+                    return ("Student " + name + " not found.");
+            }
+        }
+
+        // Test Cases
+        console.log("Test 1:",findStudent("George")); //found
+        console.log("Test 2:",findStudent("Fred"));  // found
+        console.log("Test 3:",findStudent("Hank")); // not found
+        console.log("Test 4:",findStudent("Bob")); // found
+        console.log("Test 5:",findStudent("Robert")); // found
+        console.log("Test 5:",findStudent("Bobby")); // not found
+
+    </script>
+</head>
+<body>
+</body>
+</html>
