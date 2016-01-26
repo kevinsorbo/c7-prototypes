@@ -36,26 +36,25 @@
 
 
 
-        var questionObj = {};
         student.askQuestion = function(question){
+            var questionObj = {};
             questionObj.questionAsked = question;
-            return question;
-        }
-
-
-        student.answerQuestion = function(answer){
-            questionObj.answer = answer;
             student.questionList.push(questionObj);
-            if(questionObj) {
-                questionObj = {};
-            }
-            return answer;
         }
-        console.log("Question:",student.askQuestion("What time is it?"));
-        console.log("Answer:",student.answerQuestion("It is 3"));
-        console.log("Question:",student.askQuestion("When is lunch?"));
-        console.log("Question:",student.answerQuestion("Lunch is at 12"));
+
+
+        student.answerQuestion = function(index,answer){
+            student.questionList[index].answer = answer;
+        }
+
+        student.askQuestion("What time is class?");
+        student.askQuestion("What time is lunch?");
+        student.askQuestion("What time does school end?");
+        student.answerQuestion(1,"Lunch starts at 1pm.");
+        student.answerQuestion(0,"Class starts at 10am.");
+        student.answerQuestion(2,"School ends at 6pm.");
         console.log(student.questionList);
+
 
 
 
