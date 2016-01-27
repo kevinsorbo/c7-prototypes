@@ -25,5 +25,24 @@ $(document).ready(function(){
     $("#list").on("click","button", function(){
         console.log($(this).text());
     });
+
+    //Additional Challenges
+
+    //$("#list").on("click","button", function(){
+    //    if($(this).attr("id")){
+    //        window.open("https://www.google.com/","_blank");
+    //    }
+    //
+    //});
+    //var googleButton = $("<li><button class='google' style='margin-top: 10px'>Google</button></li>");
+    //$("#list").append(googleButton);
+    //
+    //var googleButton2 = $("<li><button id='monkey' style='margin-top: 10px'>Google</button></li>");
+    //$("#list").append(googleButton2);
+
+
+
+
+
 });
 
