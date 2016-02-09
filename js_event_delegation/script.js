@@ -1,11 +1,11 @@
 // Answer the questions here:
 
 // - What do you think is going to happen?
-    // I think that when you click button 5 the content will be displayed in the console like the other buttons.
+// I think that when you click button 5 the content will be displayed in the console like the other buttons.
 // - What happened?
-    // Nothing was displayed in the console
+// Nothing was displayed in the console
 // - Why?
-   // I think when we used .on it only gave the event to the current buttons that are present.  Any button made after will not receive the event handler.
+// I think when we used .on it only gave the event to the current buttons that are present.  Any button made after will not receive the event handler.
 //========== Write your code below ===========//
 
 $(document).ready(function(){
