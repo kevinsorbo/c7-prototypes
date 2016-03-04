@@ -17,7 +17,7 @@ for(var i = 0; i < numbers.length; i++){
     result += numbers[i];
 }
 
-console.log("Result =",result);
+console.log("Result =" + result);
 
 
 //EXERCISE 4
@@ -34,6 +34,7 @@ var my_int2 = parseInt(my_float2);
 //EXERCISE 6
 
 var my_var1 = "Hello";
+var my_var2;
 
 if(my_var2){
     console.log(my_var2);
