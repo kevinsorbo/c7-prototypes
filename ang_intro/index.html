@@ -11,5 +11,10 @@
     <div ng-init="myVar='Hello'">
         {{myVar}}
     </div>
+    <div ng-init="carArray=['civic','si','lexus','toyota']">
+        <ul>
+            <li ng-repeat="keys in carArray">{{keys}}</li>
+        </ul>
+    </div>
 </body>
 </html>
