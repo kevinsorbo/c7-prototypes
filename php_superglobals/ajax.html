@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Feature Set 3</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.0/jquery.min.js"></script>
+    <script>
+        function ajaxCall(){
+            $.ajax({
+                url:"index.php",
+                method:"postgit ",
+                data:{
+                    checkbox:$("#checkBox").val(),
+                    textarea:$("#textArea").val()
+                },
+                dataType:"text",
+                success:function(response){
+                    console.log(response);
+                }
+            });
+        }
+    </script>
+</head>
+<body>
+    <form action="index.php" method="post">
+        <input id="checkBox" type="checkbox" value="howdy">
+        <textarea id="textArea"></textarea>
+        <button type="button" onclick="ajaxCall()">Submit</button>
+    </form>
+</body>
+</html>
