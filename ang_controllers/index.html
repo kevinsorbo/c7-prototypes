@@ -10,18 +10,45 @@
 <body ng-app="myApp">
 
     <div ng-controller="formController as fc">
-        <input type="text" ng-model="fc.form.fname"><br>
-        <input type="text" ng-model="fc.form.lname"><br>
-        <input type="text" ng-model="fc.form.email"><br>
-        <textarea ng-model="fc.form.comments"></textarea>
+        First Name: <input type="text" ng-model="fc.form.fname"><br>
+        Last Name: <input type="text" ng-model="fc.form.lname"><br>
+        Email: <input type="text" ng-model="fc.form.email"><br>
+        Comments: <textarea ng-model="fc.form.comments"></textarea>
+        <button type="button" ng-click="fc.addForm()">Add Form</button>
+        <hr>
+        <table>
+            <tbody>
+                <tr>
+                    <th>Full Name</th>
+                    <th>Email</th>
+                    <th>Comments</th>
+                </tr>
+                <tr ng-repeat = "form in fc.formArray">
+                    <td>{{form.fname + form.lname}}</td>
+                    <td>{{form.email}}</td>
+                    <td>{{form.comments}}</td>
+                </tr>
+            </tbody>
+        </table>
     </div>
 
-</body>
+
 <script>
     var controlApp = angular.module("myApp",[]);
     controlApp.controller("formController", function() {
         this.form ={};
-        this.formArray = [];
-    })
+        this.formArray = [{
+            fname:"korey",
+            lname: "lo",
+            email:"klo009@gmail",
+            comments: "hi"
+    }];
+
+        this.addForm = function(){
+            this.formArray.push(this.form);
+            this.form ={};
+        };
+    });
 </script>
+</body>
 </html>
