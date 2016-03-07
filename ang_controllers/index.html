@@ -17,20 +17,30 @@
         <p>Characters Remaining: <span ng-bind="fc.remainingCommentLength()"></span></p>
         <button type="button" ng-click="fc.addForm()">Add Form</button>
         <hr>
-        <table>
-            <tbody>
-                <tr>
-                    <th>Full Name</th>
-                    <th>Email</th>
-                    <th>Comments</th>
-                </tr>
-                <tr ng-repeat = "form in formArray">
-                    <td>{{form.fname + form.lname}}</td>
-                    <td>{{form.email}}</td>
-                    <td>{{form.comments}}</td>
-                </tr>
-            </tbody>
-        </table>
+        <div ng-controller="tableController as tc">
+            <p>Total Entries: <span ng-bind="tc.totalEntries()"></span></p>
+            <table>
+                <tbody>
+                    <tr>
+                        <th>Full Name</th>
+                        <th>Email</th>
+                        <th>Comments</th>
+                        <th>Operations</th>
+                    </tr>
+                    <tr ng-repeat = "form in formArray">
+                        <td>{{form.fname + form.lname}}</td>
+                        <td>{{form.email}}</td>
+                        <td>{{form.comments}}</td>
+                        <td><button type="button" ng-click="tc.removeRow($index)">Delete</button></td>
+                    </tr>
+                    <tr>
+                        <td>{{fc.form.fname + fc.form.lname}}</td>
+                        <td>{{fc.form.email}}</td>
+                        <td>{{fc.form.comments}}</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
     </div>
 
 
@@ -67,6 +77,16 @@
             }
         };
     });
+
+    controlApp.controller("tableController",function($scope){
+        this.removeRow = function(indexRow){
+            $scope.formArray.splice(indexRow,1);
+        };
+
+        this.totalEntries = function(){
+            return $scope.formArray.length;
+        };
+    })
 </script>
 </body>
 </html>
