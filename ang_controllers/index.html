@@ -10,13 +10,16 @@
 <body ng-app="myApp">
 
     <div ng-controller="formController as fc">
+        <!-- Inputs -->
         First Name: <input type="text" ng-model="fc.form.fname"><br>
         Last Name: <input type="text" ng-model="fc.form.lname"><br>
         Email: <input type="text" ng-model="fc.form.email"><br>
-        Comments: <textarea ng-model="fc.form.comments" ng-disabled="fc.checkCommentLength()"></textarea>
+        Comments: <textarea ng-model="fc.form.comments" ng-disabled="fc.checkCommentLength()"></textarea> <!-- disable if reached max amount of chars-->
+        <!-- Display remaining chars using ng-bing and method from fc controller-->
         <p>Characters Remaining: <span ng-bind="fc.remainingCommentLength()"></span></p>
-        <button type="button" ng-click="fc.addForm()">Add Form</button>
+        <button type="button" ng-click="fc.addForm()">Add Form</button> <!-- Adds to form Array-->
         <hr>
+        <!-- Second Controller for the table-->
         <div ng-controller="tableController as tc">
             <p>Total Entries: <span ng-bind="tc.totalEntries()"></span></p>
             <table>
@@ -33,6 +36,7 @@
                         <td>{{form.comments}}</td>
                         <td><button type="button" ng-click="tc.removeRow($index)">Delete</button></td>
                     </tr>
+                    <!-- Live update -->
                     <tr>
                         <td>{{fc.form.fname + fc.form.lname}}</td>
                         <td>{{fc.form.email}}</td>
@@ -48,6 +52,7 @@
     var controlApp = angular.module("myApp",[]);
     controlApp.controller("formController", function($scope) {
         this.form = {};
+        // Form array has dummy data
         $scope.formArray = [{
             fname:"korey",
             lname: "lo",
@@ -61,6 +66,7 @@
         };
 
         this.maxCommentLength = 20;
+        //determines how many chars left
         this.remainingCommentLength = function(){
             if(this.form.comments === undefined){
                 this.form.comments = '';
@@ -77,7 +83,7 @@
             }
         };
     });
-
+    // controller that uses the delete button to remove rows
     controlApp.controller("tableController",function($scope){
         this.removeRow = function(indexRow){
             $scope.formArray.splice(indexRow,1);
