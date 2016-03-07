@@ -13,7 +13,8 @@
         First Name: <input type="text" ng-model="fc.form.fname"><br>
         Last Name: <input type="text" ng-model="fc.form.lname"><br>
         Email: <input type="text" ng-model="fc.form.email"><br>
-        Comments: <textarea ng-model="fc.form.comments"></textarea>
+        Comments: <textarea ng-model="fc.form.comments" ng-disabled="fc.checkCommentLength()"></textarea>
+        <p>Characters Remaining: <span ng-bind="fc.remainingCommentLength()"></span></p>
         <button type="button" ng-click="fc.addForm()">Add Form</button>
         <hr>
         <table>
@@ -23,7 +24,7 @@
                     <th>Email</th>
                     <th>Comments</th>
                 </tr>
-                <tr ng-repeat = "form in fc.formArray">
+                <tr ng-repeat = "form in formArray">
                     <td>{{form.fname + form.lname}}</td>
                     <td>{{form.email}}</td>
                     <td>{{form.comments}}</td>
@@ -35,18 +36,35 @@
 
 <script>
     var controlApp = angular.module("myApp",[]);
-    controlApp.controller("formController", function() {
-        this.form ={};
-        this.formArray = [{
+    controlApp.controller("formController", function($scope) {
+        this.form = {};
+        $scope.formArray = [{
             fname:"korey",
             lname: "lo",
             email:"klo009@gmail",
             comments: "hi"
-    }];
+        }];
 
         this.addForm = function(){
-            this.formArray.push(this.form);
+            $scope.formArray.push(this.form);
             this.form ={};
+        };
+
+        this.maxCommentLength = 20;
+        this.remainingCommentLength = function(){
+            if(this.form.comments === undefined){
+                this.form.comments = '';
+            }
+            return this.maxCommentLength - this.form.comments.length;
+        };
+
+        this.checkCommentLength = function(){
+            if(this.remainingCommentLength() <= 0){
+                return true;
+            }
+            else{
+                return false;
+            }
         };
     });
 </script>
