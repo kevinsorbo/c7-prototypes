@@ -8,7 +8,22 @@
 <body>
     <div ng-controller="tunesController as tc">
         <input type="text" ng-model="artistName" placeholder="Artist Name">
-        <button type="button" ng-click="tc.getData(artistName)">Get Tunes</button>
+        <button type="button" ng-click="tc.constructURL(artistName); tc.getData()">Get Info</button>
+
+
+    <table ng-if="tc.data">
+        <tbody>
+            <tr>
+                <th>Song Names</th>
+                <th>Audio</th>
+            </tr>
+            <tr ng-repeat="songInfo in tc.data">
+                <td>{{songInfo.trackCensoredName}}</td>
+                <td><a href="{{songInfo.previewUrl}}" target="_blank"><button type="button">Preview Song Link</button></a></td>
+            </tr>
+        </tbody>
+    </table>
+
     </div>
 
 <script src="script.js"></script>
