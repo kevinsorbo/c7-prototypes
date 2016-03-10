@@ -2,7 +2,8 @@
 <?php
 require_once('mysql_connect.php');
 print("conn: "); print_r($conn);
-$query = 'SELECT * FROM todo_items WHERE user_id=101';
+$query = 'SELECT * FROM todo_items';
+//WHERE user_id=101';
 $result = mysqli_query($conn,$query);
 print("<br><br><pre>".print_r($result).'</pre>');
 
