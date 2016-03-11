@@ -1,12 +1,5 @@
-<?php
-/**
- * Created by PhpStorm.
- * User: koreylo
- * Date: 3/10/16
- * Time: 2:37 PM
- */
-?>
-
+<!-- Feature Set 5 -->
+<!-- Use ajax to send data to index_insert.php -->
 <!DOCTYPE html>
 <html>
 <head>
@@ -15,10 +8,12 @@
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.0/jquery.min.js"></script>
 
     <script>
+        // sendData sends data from the form to index_insert.php. This will be inserted into todo_items table
         function sendData(formTitle,formDetails,formTimestamp,formUser_id) {
             $.ajax({
                 url: "index_insert.php",
                 method: "post",
+                // these represent values from inputs
                 data:{
                     title:formTitle,
                     details:formDetails,

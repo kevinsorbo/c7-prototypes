@@ -1,4 +1,7 @@
 <!-- index_select.php -->
+<!-- Feature Set 2-->
+<!-- gather all information from todo_items table in database and display it -->
+<!-- We can get see updates of what is being added, deleted, or changed to the table todo_items-->
 <?php
 require_once('mysql_connect.php');
 print("conn: "); print_r($conn);
