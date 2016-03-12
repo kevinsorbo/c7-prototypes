@@ -1,4 +1,5 @@
 // Create the route module and name it routeApp
+var routeApp = angular.module("routeApp",[]);
 
 // Config the routes
 
@@ -10,6 +11,10 @@
 
 
 // Create the controllers for the different pages below
+
+routeApp.controller("routeCtrl",function($scope){
+    $scope.message = "lorem ipsum";
+});
 
 // home page controller
     // Create a message to display in the view
