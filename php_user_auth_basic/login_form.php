@@ -20,15 +20,35 @@
                 dataType:'json',
                 success: function(response) {
                     console.log(response);
+                    var message = response.success;
+                    if(message == "true"){
+                        var h1 = $("<h5>", {
+                            class:"loginMessage"
+                        });
+                        $('body').append(h1);
+                        h1.append("Login "+ message);
+                    }
+                    else{
+                        var h1 = $("<h5>", {
+                            class:"loginMessage"
+                        });
+                        $('body').append(h1);
+                        h1.append("Login "+ message + ": " + response.error);
+                    }
+
                 }
             });
         }
 
         $(document).ready(function(){
             $('#submitButton').click(function(){
+                $(".loginMessage").remove();
                 var username = $('#username').val();
                 var password = $('#password').val();
                 userAuth(username,password);
+                $('#username').val('');
+                $('#password').val('');
+
             });
         })
 
