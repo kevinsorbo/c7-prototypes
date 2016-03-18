@@ -5,7 +5,6 @@
     /* Get username and password from superglobal POST coming in from the user input */
     $username = $_POST['username'];
     $encrypt_password = sha1($_POST['password']); /* sha1() used to encrypt password*/
-    $_SESSION['username'] = $_POST['username'];
 
     $output = [];
     /* Example user information storage system replicated by associated array */
@@ -22,6 +21,7 @@
         if($username === $value['username']){
             if($encrypt_password == $value['password']){
                 $output = ['success' => 'true', 'user_id' => $username];
+                $_SESSION['username'] = $_POST['username'];
                 break;
             }
             else{
