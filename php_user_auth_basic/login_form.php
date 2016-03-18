@@ -7,16 +7,17 @@
     <meta charset="utf-8">
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.0/jquery.min.js"></script>
     <script>
+
         function userAuth(username,password){
             $.ajax({
-                url:'login_handler.php',
+                url:"login_handler.php",
                 data:{
                     username:username,
                     password:password
                 },
                 cache:false,
                 method:'post',
-                dataType:'text',
+                dataType:'json',
                 success: function(response) {
                     console.log(response);
                 }
@@ -24,9 +25,9 @@
         }
 
         $(document).ready(function(){
-            var username = $('#username').val();
-            var password = $('#password').val();
             $('#submitButton').click(function(){
+                var username = $('#username').val();
+                var password = $('#password').val();
                 userAuth(username,password);
             });
         })

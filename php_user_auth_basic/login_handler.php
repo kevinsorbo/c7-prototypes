@@ -1,14 +1,14 @@
-<!--login_handler.php-->
-
 <?php
 
     session_start();
 
-//    $username = $_POST['username'];
-//    $password = $_POST['password'];
+    $username = $_POST['username'];
+    $password = $_POST['password'];
     $_SESSION['username'] = $_POST['username'];
-    $username = 'klo07';
-    $password = 'codeninja2';
+//    $username = 'klo07';
+//    $password = 'codeninja2';
+
+    $output = [];
 
     $user_info = [
                     ['username'=>'klo01','password'=>'codeninja1'],
@@ -24,17 +24,18 @@
 //        echo "$username <br>" ;
         if($username === $value['username']){
             if($password == $value['password']){
-                $user_info = ['success' => 'true'];
+                $output = ['success' => 'true', 'user_id' => $username];
                 break;
             }
             else{
-                $user_info = ['success' => 'false', 'errors' => 'Incorrect Password'];
+                $output = ['success' => 'false', 'error' => 'Incorrect Password'];
                 break;
             }
         }
         else{
-            $user_info = ['success' => 'false', 'errors' => 'Username Not Found'];
+            $output = ['success' => 'false', 'error' => 'Username Not Found'];
         }
     }
 
-    print_r($user_info);
+    $output_string = json_encode($output);
+    print_r($output_string);
