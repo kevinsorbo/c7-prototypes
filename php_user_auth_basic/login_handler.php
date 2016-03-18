@@ -2,8 +2,9 @@
 
     session_start();
 
+
     $username = $_POST['username'];
-    $password = $_POST['password'];
+    $encrypt_password = sha1($_POST['password']);
     $_SESSION['username'] = $_POST['username'];
 //    $username = 'klo07';
 //    $password = 'codeninja2';
@@ -11,11 +12,11 @@
     $output = [];
 
     $user_info = [
-                    ['username'=>'klo01','password'=>'codeninja1'],
-                    ['username'=>'klo02','password'=>'codeninja2'],
-                    ['username'=>'klo03','password'=>'codeninja3'],
-                    ['username'=>'klo04','password'=>'codeninja4'],
-                    ['username'=>'klo05','password'=>'codeninja5']
+                    ['username'=>'klo01','password'=>'057921f583a82b68c04e4fbfec1de9d36c06ecd2'],
+                    ['username'=>'klo02','password'=>'c1b520ec19c7570a96b60ce6535c2e96824eeec5'],
+                    ['username'=>'klo03','password'=>'5d667d701c040c60cbde6066198b5166a8844921'],
+                    ['username'=>'klo04','password'=>'9edfd27b78694a8a5401b75262cba2a72d398308'],
+                    ['username'=>'klo05','password'=>'6148be4f4636b6beec817da6baf418222619ba40']
                   ];
 
     foreach($user_info as $ui => $value){
@@ -23,7 +24,7 @@
 //        print_r($value['password']);
 //        echo "$username <br>" ;
         if($username === $value['username']){
-            if($password == $value['password']){
+            if($encrypt_password == $value['password']){
                 $output = ['success' => 'true', 'user_id' => $username];
                 break;
             }
