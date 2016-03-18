@@ -2,15 +2,13 @@
 
     session_start();
 
-
+    /* Get username and password from superglobal POST coming in from the user input */
     $username = $_POST['username'];
-    $encrypt_password = sha1($_POST['password']);
+    $encrypt_password = sha1($_POST['password']); /* sha1() used to encrypt password*/
     $_SESSION['username'] = $_POST['username'];
-//    $username = 'klo07';
-//    $password = 'codeninja2';
 
     $output = [];
-
+    /* Example user information storage system replicated by associated array */
     $user_info = [
                     ['username'=>'klo01','password'=>'057921f583a82b68c04e4fbfec1de9d36c06ecd2'],
                     ['username'=>'klo02','password'=>'c1b520ec19c7570a96b60ce6535c2e96824eeec5'],
@@ -19,10 +17,8 @@
                     ['username'=>'klo05','password'=>'6148be4f4636b6beec817da6baf418222619ba40']
                   ];
 
+    /* Loop through user info array to see if username is in the system */
     foreach($user_info as $ui => $value){
-//        print_r($value['username']);
-//        print_r($value['password']);
-//        echo "$username <br>" ;
         if($username === $value['username']){
             if($encrypt_password == $value['password']){
                 $output = ['success' => 'true', 'user_id' => $username];
