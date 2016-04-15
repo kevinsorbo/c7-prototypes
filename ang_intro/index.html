@@ -5,8 +5,13 @@
     <title>Angular Intro</title>
     <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.9/angular.min.js"></script></head>
 <body>
-    <div ng-init="myVar='I love programming'">
+    <div ng-init="myVar='I love Cars'">
         {{myVar}}
+    </div>
+    <div ng-init="carArray=['Honda','Toyota','Lexus','Kia']">
+        <ul>
+            <li ng-repeat="cars in carArray">{{cars}}</li>
+        </ul>
     </div>
 </body>
 </html>
