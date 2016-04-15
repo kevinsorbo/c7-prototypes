@@ -8,11 +8,12 @@
 
 </head>
     <body ng-app>
-        <div ng-init="myVar=true">
+        <div ng-init="myVar=true; counter=0">
             <span ng-hide="myVar">The button is enabled</span>
             <span ng-show="myVar">The button is disabled</span>
-            <button type="button" ng-disabled="myVar">Click Me</button>
+            <button type="button" ng-disabled="myVar" ng-click="counter = counter+1">Click Me</button>
             <input type="checkbox" ng-model="myVar">
+            <p>{{'Counter: ' + counter}}</p>
         </div>
     </body>
 </html>
