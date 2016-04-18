@@ -13,7 +13,8 @@
         <input type="text" ng-model="fc.form.fname" placeholder="First Name"><br>
         <input type="text" ng-model="fc.form.lname" placeholder="Last Name"><br>
         <input type="text" ng-model="fc.form.email" placeholder="email"><br>
-        <textarea ng-model="fc.form.comments" placeholder="comments"></textarea>
+        <textarea ng-model="fc.form.comments" placeholder="comments" ng-disabled="fc.charsAvail()"></textarea>
+        <p>{{fc.checkAvailable()}}</p>
         <button type="button" ng-click="fc.addForm()">Submit</button>
         <hr>
         <table>
@@ -35,7 +36,13 @@
 <script>
     var app = angular.module('angControl',[]);
     app.controller('formController',function(){
-        this.form = {};
+        this.maxCommentLength = 25;
+        this.form = {
+            fname:'',
+            lname:'',
+            email:'',
+            comments:''
+        };
         this.forms = [
             {fname:'Korey',
             lname:'Lo',
@@ -45,6 +52,21 @@
         this.addForm = function(){
             this.forms.push(this.form);
             this.form = {};
+        };
+        this.checkAvailable = function(){
+            if(this.form.comments === undefined){
+                this.form.comments = '';
+            }
+            return this.maxCommentLength - this.form.comments.length;
+        };
+        this.charsAvail = function(){
+            var check = this.checkAvailable();
+            if(check <= 0){
+                return true;
+            }
+            else{
+                return false;
+            }
         }
     });
 </script>
