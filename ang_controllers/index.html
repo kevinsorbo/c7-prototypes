@@ -10,18 +10,42 @@
 </head>
 <body ng-app="angControl">
     <div ng-controller="formController as fc">
-        <input type="text" ng-model="fc.form.fname"><br>
-        <input type="text" ng-model="fc.form.lname"><br>
-        <input type="text" ng-model="fc.form.email"><br>
-        <textarea ng-model="fc.form.comments"></textarea>
+        <input type="text" ng-model="fc.form.fname" placeholder="First Name"><br>
+        <input type="text" ng-model="fc.form.lname" placeholder="Last Name"><br>
+        <input type="text" ng-model="fc.form.email" placeholder="email"><br>
+        <textarea ng-model="fc.form.comments" placeholder="comments"></textarea>
+        <button type="button" ng-click="fc.addForm()">Submit</button>
+        <hr>
+        <table>
+            <tbody>
+                <tr>
+                    <th>Full Name</th>
+                    <th>Email</th>
+                    <th>Comments</th>
+                </tr>
+                <tr ng-repeat = 'f in fc.forms'>
+                    <td>{{f.fname + " " + f.lname}}</td>
+                    <td>{{f.email}}</td>
+                    <td>{{f.comments}}</td>
+            </tr>
+            </tbody>
+        </table>
     </div>
-
 </body>
 <script>
-    var app = angular.module('angController',[]);
+    var app = angular.module('angControl',[]);
     app.controller('formController',function(){
         this.form = {};
-        this.forms = [];
-    })
+        this.forms = [
+            {fname:'Korey',
+            lname:'Lo',
+            email:'koreylo@gmail.com',
+            comments:"TSM shoulda won"}
+        ];
+        this.addForm = function(){
+            this.forms.push(this.form);
+            this.form = {};
+        }
+    });
 </script>
 </html>
