@@ -14,28 +14,33 @@
         <input type="text" ng-model="fc.form.lname" placeholder="Last Name"><br>
         <input type="text" ng-model="fc.form.email" placeholder="email"><br>
         <textarea ng-model="fc.form.comments" placeholder="comments" ng-disabled="fc.charsAvail()"></textarea>
-        <p>{{fc.checkAvailable()}}</p>
+        <p>Remaining Chars: {{fc.checkAvailable()}}</p>
         <button type="button" ng-click="fc.addForm()">Submit</button>
         <hr>
-        <table>
-            <tbody>
-                <tr>
-                    <th>Full Name</th>
-                    <th>Email</th>
-                    <th>Comments</th>
-                </tr>
-                <tr ng-repeat = 'f in fc.forms'>
-                    <td>{{f.fname + " " + f.lname}}</td>
-                    <td>{{f.email}}</td>
-                    <td>{{f.comments}}</td>
-            </tr>
-            </tbody>
-        </table>
+        <div ng-controller = "tableController as tc">
+            <p>Total Number of Entries: {{tc.totalEntries()}}</p>
+            <table>
+                <tbody>
+                    <tr>
+                        <th>Full Name</th>
+                        <th>Email</th>
+                        <th>Comments</th>
+                        <th>Delete</th>
+                    </tr>
+                    <tr ng-repeat = 'f in forms'>
+                        <td>{{f.fname + " " + f.lname}}</td>
+                        <td>{{f.email}}</td>
+                        <td>{{f.comments}}</td>
+                        <td><button type="button" ng-click="tc.removeRow($index)">Delete {{$index}}</button></td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
     </div>
 </body>
 <script>
     var app = angular.module('angControl',[]);
-    app.controller('formController',function(){
+    app.controller('formController',function($scope){
         this.maxCommentLength = 25;
         this.form = {
             fname:'',
@@ -43,14 +48,14 @@
             email:'',
             comments:''
         };
-        this.forms = [
+        $scope.forms = [
             {fname:'Korey',
             lname:'Lo',
             email:'koreylo@gmail.com',
             comments:"TSM shoulda won"}
         ];
         this.addForm = function(){
-            this.forms.push(this.form);
+            $scope.forms.push(this.form);
             this.form = {};
         };
         this.checkAvailable = function(){
@@ -69,5 +74,16 @@
             }
         }
     });
+
+    app.controller('tableController',function($scope){
+        this.removeRow = function(index){
+            $scope.forms.splice(index,1);
+        };
+        this.totalEntries = function(){
+            return $scope.forms.length;
+        }
+
+
+    })
 </script>
 </html>
