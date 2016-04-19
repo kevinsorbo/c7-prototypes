@@ -1,5 +1,5 @@
-<!doctype html>
-<html lang="en">
+<!DOCTYPE html>
+<html lang="en" ng-app="myTunes">
 <head>
     <meta charset="UTF-8">
     <title>Angular Services Intro</title>
@@ -7,6 +7,11 @@
 </head>
 <body>
 
+<div id = "artistInfo" ng-controller="tunesController as tc" ng-init="artist">
+    <h3>Enter an Artist to get a preview of their songs</h3>
+    <input type="text" ng-model="artistName" placeholder="Artist Name">
+    <button type="button" ng-click="tc.getTunes(searchTerm)">Search</button>
 <script src="script.js"></script>
+</div>
 </body>
 </html>
