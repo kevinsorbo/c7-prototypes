@@ -17,12 +17,15 @@
             <tr>
                 <th>Song Name</th>
                 <th>Artist</th>
+                <th>Album Cover</th>
                 <th>Preview</th>
             </tr>
             <tr ng-repeat = "songInfo in tc.data">
                 <td>{{songInfo.trackName}}</td>
                 <td>{{songInfo.artistName}}</td>
-                <td>{{songInfo.previewUrl}}</td>
+                <td><img ng-src="{{songInfo.artworkUrl100}}"></td>
+                <td><audio controls="controls" preload="auto" id="audio_player"><source ng-src='{{songInfo.previewUrl}}' type="audio/mp4"></audio></td>
+                <!--<td><a ng-href="{{songInfo.previewUrl}}" target="_blank"><button type="button">Listen</button> </a></td>-->
             </tr>
         </tbody>
     </table>
