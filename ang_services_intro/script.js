@@ -15,7 +15,8 @@ tunes.controller('tunesController',function($scope,$http,$log){
             method: 'JSONP',
             cache: false
         }).then(function(response){
-                    $log.log(response);
+                    $log.log(response.data.results);
+                    self.data = response.data.results;
                 },
                 function(response) {
                     $log.log('failure');
