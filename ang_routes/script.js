@@ -19,6 +19,9 @@ route.config(function($routeProvider){
             templateUrl:'pages/contact.html',
             controller:'contactCtrl'
         })
+        .otherwise({
+            redirectTo:'/home'
+        })
 });
 
 
