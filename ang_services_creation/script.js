@@ -2,14 +2,18 @@ var app = angular.module('sgtApp', []);
 
 app.provider('sgtData', function(){
     //Create a variable to hold this
+    var self = this;
 
     //Create a variable to hold your api key but set it to an empty string
-
+    var api_key = '';
     //Create a variable to hold the API url but set it to an empty string
-
+    var api_url = '';
 
     //Add the necessary services to the function parameter list
-    this.$get = function(){
+    this.$get = function($http,$q,$log){
+
+        var data = {};
+        return data;
         //return an object that contains a function to call the API and get the student data
         //Refer to the prototype instructions for more help
 
