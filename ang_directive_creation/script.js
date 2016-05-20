@@ -11,6 +11,13 @@ app.directive('gameBoard',function(){
     }
 });
 
+app.directive('infoBar',function(){
+    return{
+        restrict:'E',
+        templateUrl:'info-bar-template.html'
+    }
+});
+
 
 app.factory('boardServ', function($log){
     var boardSize = [3, 3]; //default board size
